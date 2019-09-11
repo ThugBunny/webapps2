@@ -1,0 +1,28 @@
+
+console.log(undefined == undefined); // true
+console.log(null == undefined); // true
+console.log(0 == undefined); // false
+console.log('' == undefined); // false
+console.log(false == undefined); // false
+
+// Declaración de tublas
+let x: [string, number];
+// Inicialización correcta
+x = ["hello", 10]; // OK
+// Inicialización incorrecta
+x = [10, "hello"]; // Error
+
+
+
+console.log(x[0].substr(1)); // OK
+console.log(x[1].substr(1)); // Error, Un tipo 'number' no tiene la función 'substr'
+
+
+
+x[3] = "world"; // OK, Un tipo 'string' puede ser asignado a una tupla que contenga 'string | number'
+
+console.log(x[5].toString()); // OK, Un tipo 'string' y un tipo 'number' tienen la función 'toString'
+
+x[6] = true; // Error,El tipo 'boolean' no es 'string | number'
+
+
